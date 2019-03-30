@@ -44,7 +44,7 @@ fn get_home_dir(usr: Option<&str>) -> Option<String> {
 fn get_home_dir(usr: Option<&str>) -> Option<String> {
     match usr {
         Some(_) => None,
-        None => std::env::getenv("USERPROFILE").ok(),
+        None => std::env::var("USERPROFILE").ok(),
     }
 }
 
